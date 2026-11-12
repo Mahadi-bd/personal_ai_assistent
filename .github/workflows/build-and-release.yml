@@ -1,5 +1,7 @@
 name: Build APK and publish release
 
+# Click: Actions -> "Build APK and publish release" -> Run workflow
+# (also runs by itself every time you push to the main branch)
 on:
   workflow_dispatch:
     inputs:
@@ -19,12 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
 
-      - uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses (SDK is already installed on the runner)
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
 
       - uses: gradle/actions/setup-gradle@v4
         with:
