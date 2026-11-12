@@ -1,0 +1,32 @@
+*.iml
+.gradle
+.kotlin
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.env
+debug.keystore
+
+# Secrets & signing (never commit these)
+*.jks
+*.keystore
+*.p12
+key.properties
+my-upload-key.jks
+.env
+*.aab
+*.apk
+/app/build
+
+# Public test-signing key used only for GitHub APK downloads (NOT for Google Play)
+!ci/apk-signing.jks
